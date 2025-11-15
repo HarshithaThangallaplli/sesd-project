@@ -1,77 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Smart Study Planner</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personalized Study Planner</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Smart Study Planner</h1>
-    <p class="sub">Auto-schedule your study time based on availability &amp; difficulty</p>
+    <h1>Personalized Study Planner</h1>
   </header>
 
-  <main class="container">
-    <section class="left">
-      <div class="card">
-        <h2>Add Subject</h2>
-        <input id="subjectName" placeholder="Subject name" />
-        <select id="difficulty">
-          <option value="1">Easy</option>
-          <option value="2">Medium</option>
-          <option value="3">Hard</option>
-        </select>
-        <input id="hoursNeeded" type="number" min="1" placeholder="Hours needed (total)" />
-        <button id="addSubject">Add Subject</button>
-      </div>
+  <section id="calendar-section">
+    <h2>Weekly Study Calendar</h2>
+    <div id="calendar"></div>
+  </section>
 
-      <div class="card">
-        <h2>My Subjects</h2>
-        <ul id="subjectsList" class="list"></ul>
-      </div>
+  <section id="timer-section">
+    <h2>Study Timer</h2>
+    <div id="timer-display">00:00:00</div>
+    <button id="start-timer">Start</button>
+    <button id="stop-timer" disabled>Stop</button>
+    <button id="reset-timer" disabled>Reset</button>
+  </section>
 
-      <div class="card">
-        <h2>Availability</h2>
-        <label>Hours per day:
-          <input id="hoursPerDay" type="number" min="1" value="4" />
-        </label>
-        <label>Days to plan:
-          <input id="daysToPlan" type="number" min="1" value="7" />
-        </label>
-        <button id="generatePlan">Generate Smart Plan</button>
-      </div>
-    </section>
+  <section id="schedule-section">
+    <h2>AI Generated Study Schedule</h2>
+    <div id="study-schedule"></div>
+  </section>
 
-    <section class="right">
-      <div class="card">
-        <h2>Suggested Plan</h2>
-        <div id="planArea" class="planArea">No plan generated yet.</div>
-        <div class="plan-actions">
-          <button id="exportPlan">Export Plan (JSON)</button>
-          <button id="clearPlan" class="secondary">Clear Plan</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Exam Countdown</h2>
-        <input id="examDate" type="date" />
-        <button id="setExam">Set Exam Date</button>
-        <div id="countdown">No exam set</div>
-      </div>
-
-      <div class="card">
-        <h2>Notes & To-Dos</h2>
-        <input id="todoText" placeholder="Quick task..." />
-        <button id="addTodo">Add</button>
-        <ul id="todoList" class="list"></ul>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <small>Smart Study Planner • Frontend-only • Data stored in your browser</small>
-  </footer>
+  <section id="quote-section">
+    <h2>Motivational Quote</h2>
+    <blockquote id="motivational-quote"></blockquote>
+    <button id="new-quote">New Quote</button>
+  </section>
 
   <script src="script.js"></script>
 </body>
